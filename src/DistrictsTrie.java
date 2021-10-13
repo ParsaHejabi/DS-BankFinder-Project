@@ -17,11 +17,10 @@ public class DistrictsTrie {
 
             root = root.districtsTries[index];
         }
-        if(root.isLeaf == true){
+        if (root.isLeaf == true) {
             System.err.println("Change the district name!");
             System.err.println(name + " District exists already!");
-        }
-        else{
+        } else {
             root.isLeaf = true;
             root.district = district;
             System.out.println(root.district.name + " District added.");

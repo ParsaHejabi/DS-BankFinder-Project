@@ -22,17 +22,16 @@ public class BanksTrie {
             root = root.banksTries[index];
         }
         root.isLeaf = true;
-        if (root.kdTree == null){
-            root.kdTree = new KDTree(false,null);
+        if (root.kdTree == null) {
+            root.kdTree = new KDTree(false, null);
         }
-        if (root.kdTree.leftChild == null && root.kdTree.rightChild == null && root.kdTree.bank == null){
+        if (root.kdTree.leftChild == null && root.kdTree.rightChild == null && root.kdTree.bank == null) {
             root.kdTree.bank = bank;
-        }
-        else{
+        } else {
             root.kdTree.add(root.kdTree, bank, false);
         }
         root.size++;
-        if (root.size >= championSize){
+        if (root.size >= championSize) {
             mostBranchedBank = name;
             championSize = root.size;
         }
@@ -54,11 +53,11 @@ public class BanksTrie {
             return null;
     }
 
-    public KDTree deleteBankInTrie(String name, BanksTrie root){
+    public KDTree deleteBankInTrie(String name, BanksTrie root) {
 
         BanksTrie searchedBankTrie = searchBankInTrie(name, root);
 
-        if (searchedBankTrie.size == 1){
+        if (searchedBankTrie.size == 1) {
             searchedBankTrie.isLeaf = false;
         }
         searchedBankTrie.size--;

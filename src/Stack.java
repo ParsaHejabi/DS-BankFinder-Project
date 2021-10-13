@@ -1,12 +1,7 @@
 public class Stack<Item> {
 
-    public class Cell {
-        private Item item;
-        private Cell next;
-    }
     public int size;
     public Cell top;
-
     public Stack() {
         top = null;
         size = 0;
@@ -41,5 +36,10 @@ public class Stack<Item> {
         if (isEmpty())
             System.err.println("Stack underflow");
         return top.item;
+    }
+
+    public class Cell {
+        private Item item;
+        private Cell next;
     }
 }
